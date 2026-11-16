@@ -100,9 +100,14 @@ test('no key sends no header', async () => {
 })
 
 // ---- live calls: only endpoints that need no key ----
-test('live: demo and catalogue', async () => {
-  const c = new Praesago({ apiKey: '' })
-  assert.equal((await c.demo()).district.district, 'E17')
+test('live: demo and catalogue', async (t) => {
+  const c = new Praesago({ apiKey: '', maxRetries: 0 })
+  let demo
+  try { demo = await c.demo() } catch (e) {
+    if (e.status === 403) return t.skip('Cloudflare blocks keyless calls from this network (cloud runners)')
+    throw e
+  }
+  assert.equal(demo.district.district, 'E17')
   assert.match((await c.catalogue()).coverage, /England and Wales/)
 })
 
