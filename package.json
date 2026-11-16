@@ -1,0 +1,30 @@
+{
+  "name": "praesago",
+  "version": "0.1.0",
+  "description": "JavaScript and TypeScript client for the Praesago API: England and Wales property and area data (sold prices, rents, listings statistics, planning, crime, schools, flood).",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": { "node": ">=18.17" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/client.test.js",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": ["property", "real-estate", "england", "wales", "postcode", "house-prices", "api", "mcp"],
+  "homepage": "https://praesago.com/docs/api",
+  "repository": { "type": "git", "url": "git+https://github.com/Praesago/praesago-js.git" },
+  "bugs": { "url": "https://github.com/Praesago/praesago-js/issues" },
+  "license": "MIT",
+  "author": "Praesago",
+  "devDependencies": {
+    "typescript": "5.6.3"
+  }
+}
