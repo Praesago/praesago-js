@@ -11,17 +11,37 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md", "LICENSE"],
-  "engines": { "node": ">=18.17" },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "npm run build && node --test test/client.test.js",
-    "prepublishOnly": "npm test"
+    "prepare": "npm run build",
+    "test": "npm run build && node --test test/client.test.js"
   },
-  "keywords": ["property", "real-estate", "england", "wales", "postcode", "house-prices", "api", "mcp"],
+  "keywords": [
+    "property",
+    "real-estate",
+    "england",
+    "wales",
+    "postcode",
+    "house-prices",
+    "api",
+    "mcp"
+  ],
   "homepage": "https://praesago.com/docs/api",
-  "repository": { "type": "git", "url": "git+https://github.com/Praesago/praesago-js.git" },
-  "bugs": { "url": "https://github.com/Praesago/praesago-js/issues" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Praesago/praesago-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Praesago/praesago-js/issues"
+  },
   "license": "MIT",
   "author": "Praesago",
   "devDependencies": {

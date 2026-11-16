@@ -5,8 +5,10 @@ Client for the [Praesago API](https://praesago.com/docs/api): property and area 
 No dependencies. Node 18 or later, Deno, Bun and edge runtimes (it uses `fetch`). Types included.
 
 ```bash
-npm install praesago
+npm install github:Praesago/praesago-js
 ```
+
+(The npm registry release is coming. Until then, install from GitHub as above.)
 
 ## Start
 
